@@ -1,0 +1,28 @@
+competitors:
+  - name: "Lovable"
+    use_playwright: true
+    urls:
+      - "https://lovable.dev"
+      - "https://lovable.dev/blog"
+      - "https://docs.lovable.dev/changelog"
+
+  - name: "Figma Make"
+    use_playwright: true
+    urls:
+      - "https://www.figma.com"
+      - "https://www.figma.com/blog/"
+      - "https://www.figma.com/release-notes/"
+
+  - name: "Replit"
+    use_playwright: false
+    urls:
+      - "https://replit.com"
+      - "https://blog.replit.com"
+      - "https://docs.replit.com/updates/"
+
+  - name: "V0"
+    use_playwright: true
+    urls:
+      - "https://v0.dev"
+      - "https://vercel.com/blog/category/v0"
+      - "https://v0.app/changelog"

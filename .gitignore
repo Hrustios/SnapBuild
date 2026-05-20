@@ -1,0 +1,4 @@
+*.ico
+*.ini
+__pycache__/
+*.pyc
