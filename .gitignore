@@ -1,4 +1,7 @@
 *.ico
 *.ini
+venv/
 __pycache__/
 *.pyc
+.env
+logs/
