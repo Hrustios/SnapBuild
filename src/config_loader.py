@@ -1,7 +1,8 @@
 import yaml
 from pathlib import Path
 
-CONFIG_PATH = Path("config/competitors.yaml")
+ROOT_DIR = Path(__file__).parent.parent
+CONFIG_PATH = ROOT_DIR / "config" / "competitors.yaml"
 
 def load_competitors():
     # Загрузка списка конкурентов из YAML-конфига

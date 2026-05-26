@@ -1,7 +1,12 @@
 import sqlite3
 from pathlib import Path
 
-DATABASE_PATH = Path("data/snapshots.db")
+ROOT_DIR = Path(__file__).parent.parent
+DATA_DIR = ROOT_DIR / "data"
+
+DATA_DIR.mkdir(exist_ok=True)
+
+DATABASE_PATH = DATA_DIR / "snapshots.db"
 
 class Database:
     def __init__(self):
