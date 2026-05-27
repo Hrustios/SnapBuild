@@ -13,9 +13,9 @@ class Database:
         self.connection = sqlite3.connect(DATABASE_PATH)
         self.cursor = self.connection.cursor()
 
+#region Создание таблицы снапшотов если ещё не существует
     def create_tables(self):
-        # Создание таблицы снапшотов если ещё не существует
-
+        
         self.cursor.execute("""
         CREATE TABLE IF NOT EXISTS snapshots (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -27,21 +27,23 @@ class Database:
 
         self.connection.commit()
         print("[INFO] Таблица snapshots готова.")
+#endregion
 
+#region Сохранение снапшота страницы
     def save_snapshot(self, competitor, url, content):
-        # Сохранение снапшота страницы
+        
         self.cursor.execute("""
-        INSERT INTO snapshots 
-        (competitor, url, content )
-        VALUES (?, ?, ?)""",
-        (competitor, url, content))
+        INSERT INTO snapshots (competitor, url, content )
+        VALUES (?, ?, ?)""", (competitor, url, content))
 
         self.connection.commit()
 
         print(f"\033[32m[INFO] Снапшот сохранён: {competitor}\033[0m")
+#endregion
 
+#region Получение последнего снапшота страницы
     def get_last_snapshot(self, url):
-        # Получение последнего снапшота страницы
+        
         self.cursor.execute("""
         SELECT content FROM snapshots WHERE url = ?
         ORDER BY id DESC LIMIT 1 """, (url,))
@@ -52,6 +54,7 @@ class Database:
             return result[0]
 
         return None
+#endregion
 
     def close(self):
         self.connection.close()
