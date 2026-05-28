@@ -1,15 +1,15 @@
 1. Code Prettyer (manual) => complete
 
-2. Code support (комментарии) = in process
+2. Code support (комментарии) = complete
 
-3. Refactoring "code's for user", not for debug = in process
+3. Refactoring "code's for user", not for debug = complete
 
 4. Deploy on free host
 
 На англ было удобнее писать, чтобы не переключаться постоянно
 
 v [Major].[Minor].[Patch].[Build]
-v0.9.1.1
+v0.9.1.2
 
 Number of lines of code:
 ===== Before All =====
@@ -27,5 +27,14 @@ DB = 60
 DD = 29
 Main = 92
 Pars = 217
+Sub = 43
+TB = 172
+
+===== Before Hosting =====
+CL = 31
+DB = 60
+DD = 29
+Main = 92
+Pars = 218
 Sub = 43
 TB = 172

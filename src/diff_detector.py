@@ -1,7 +1,7 @@
 import difflib
 
 class DiffDetector:
-    @staticmethod
+    @staticmethod #Проверка наличия изменений между старым и новым снапшотом страницы
     def has_changes(old_content, new_content):
         
         if old_content is None:
@@ -9,7 +9,7 @@ class DiffDetector:
 
         return old_content.strip() != new_content.strip()
 
-    @staticmethod
+    @staticmethod #если есть изменения, то возвращаем их в виде строки, иначе - сообщение об отсутствии изменений
     def get_changes(old_content, new_content):
         
         if old_content is None:

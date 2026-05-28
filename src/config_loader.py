@@ -16,6 +16,7 @@ def load_competitors():
 
         return competitors
 
+    #region обработка ошибок при загрузке конфигурации
     except FileNotFoundError:
         print("\033[31m[ERROR] Файл competitors.yaml не найден.\033[0m")
         return []
@@ -27,3 +28,4 @@ def load_competitors():
     except Exception as error:
         print(f"\033[31m[ERROR] Непредвиденная ошибка: {error}\033[0m")
         return []
+    #endregion

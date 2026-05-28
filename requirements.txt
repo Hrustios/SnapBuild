@@ -1,7 +1,6 @@
 beautifulsoup4
 requests
 pyyaml
-python-dotenv
 lxml
 playwright
 python-dotenv==1.1.0

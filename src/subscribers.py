@@ -14,7 +14,7 @@ class SubscribersDatabase:
         self.cursor = self.connection.cursor()
         self.create_table()
 
-    def create_table(self):
+    def create_table(self): # создание таблицы для хранения подписчиков, если её ещё нет
         self.cursor.execute("""
         CREATE TABLE IF NOT EXISTS subscribers (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -22,7 +22,7 @@ class SubscribersDatabase:
 
         self.connection.commit()
 
-    def add_subscriber(self, chat_id):
+    def add_subscriber(self, chat_id): # добавление нового подписчика в базу данных, если его там ещё нет
         self.cursor.execute("""
         INSERT OR IGNORE
         INTO subscribers (chat_id)
@@ -32,12 +32,12 @@ class SubscribersDatabase:
 
         print(f"[INFO] Добавлен подписчик: {chat_id}")
 
-    def get_all_subscribers(self):
+    def get_all_subscribers(self): # получение списка всех подписчиков
         self.cursor.execute("""SELECT chat_id FROM subscribers""")
 
         rows = self.cursor.fetchall()
 
         return [row[0] for row in rows]
 
-    def close(self):
+    def close(self): # закрытие соединения с базой данных
         self.connection.close()

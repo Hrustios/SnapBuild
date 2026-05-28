@@ -209,6 +209,7 @@ class PageParser:
 
         text_lower = cleaned_text.lower()
 
+        # обработка на случай защиты от использования Cloudflare
         for sign in cloudflare_signs:
             if sign in text_lower:
                 print("\033[31m[WARNING] Cloudflare block.\033[0m") #видимо защита срабатывает, это её текст был
